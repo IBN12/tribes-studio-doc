@@ -1,0 +1,28 @@
+/* |App Component Container (Root Component Container)| */
+
+/* font-1 - Rockinline */
+@font-face {
+    font-family: rockinline;
+    src: url(../fonts/rockinline/Rockinline.ttf);
+}
+
+/* app-component-container - The root component container. */
+
+
+/* Media Section - For mobile devices and tablets */
+/* media-0 - Desktop miniaturization and mobile devices. */
+@media only screen and (max-width: 600px){
+    /* app-component-container - The root component container. */
+    .app-component-container > h1 {
+        text-align: center;
+        color: #27272a;
+        letter-spacing: 3px;
+        font-family: rockinline;
+    }
+    .app-component-container > p{
+        text-align: center;
+        color: #f59e0b;
+        font-size: 18px;
+    }
+
+}

@@ -1,0 +1,78 @@
+/* |Home Page Content Component Container| */
+
+/* font-1 - Rockinline */
+@font-face {
+    font-family: rockinline;
+    src: url(../fonts/rockinline/Rockinline.ttf);
+}
+
+/* Media Section - For mobile devices and tablets */
+/* media-0 - Desktop miniaturization and mobile devices. */
+@media only screen and (max-width: 600px) {
+    /* home-page-content-component-container - The homepage content component container. */
+    .home-page-content-component-container{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    .home-page-content-component-container > div{
+        /* border: 1px solid black; */
+    }
+
+    #tools{
+        font-family: rockinline;
+        font-weight: bold;
+        font-size: 30px;
+        letter-spacing: 3px;
+    }
+
+    #unreal-engine{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        padding: 10px
+    }
+    #unreal-engine > div:nth-child(2){
+        letter-spacing: 3px;
+        font-family: rockinline;
+        font-size: 18px;
+    }
+    #unreal-engine > img[src]{
+        width: 100%;
+        height: 200px;
+        border-radius: 10px;
+        text-align: center;
+    }
+    #unreal-engine > div:nth-child(3){
+        color: #f59e0b;
+        font-size: 18px;
+    }
+
+    #fullstack-development{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        padding: 10px;
+    }
+    #fullstack-development > div:nth-child(1){
+        font-family: rockinline;
+        letter-spacing: 3px;
+        font-size: 18px;
+    }
+    #fullstack-development > div:nth-child(2){
+        display: flex;
+        justify-content: space-evenly;
+        gap: 10px;
+    }
+    #fullstack-development > div img[src]{
+        width: 50px;
+        height: 50px;
+        border-radius: 10px;
+    }
+    #fullstack-development > div:nth-child(3){
+        font-size: 18px;
+        color: #f59e0b;
+    }
+ 
+    
+}

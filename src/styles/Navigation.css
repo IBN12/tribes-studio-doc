@@ -1,0 +1,13 @@
+/* |Navigation Component Container| */
+/* navigation-component-container - The navigation component container. */
+.navigation-component-container{
+    /* border: 1px solid black; */
+    margin-bottom: 20px;
+}
+.navigation-component-container > a{
+    font-size: 18px;
+    text-decoration: none;
+    color: #27272a;
+    font-weight: bold;
+    letter-spacing: 4px
+}

@@ -1,60 +1,115 @@
 import '../styles/HomePageContent.css';
+
 import unrealEngineScreenshotOne from '../images/practice-one-screenshot-1.png';
 import unrealEngineScreenshotTwo from '../images/Unreal 5 Screenshot 2.png';
+import theElectronicOneLogoTitleSymbol from '../images/The_Electronic_One_Logo_Concept_Title_Symbol.png';
+import striveBannerConceptTitle3 from '../images/Strive_Banner_Concept_Title_3.png';
+import cerebralConceptLogo2 from '../images/Cerebral_Concept_Logo_2.png';
 import react from '../images/React.png';
+import { TwitchLogo } from './TwitchLogo';
+import { YouTubeLogo } from './YouTubeLogo';
+
 import reactRouter from '../images/React-Router.png';
 import javascript from '../images/JavaScript-logo.png';
+
+import { Link } from 'react-router-dom';
 
 // HomePageContent(): The home page content component container.s
 export const HomePageContent = () => {
     return (
         <div className="home-page-content-component-container">
-            <div id="tools">Tools</div>
+            <div id="tools">
+                <h2>Tools</h2>
 
-            <div id="unreal-engine">
-                <img 
-                    src={unrealEngineScreenshotOne} 
-                    alt="Unreal Engine Screenshot One"
-                />
-                
-                <div>
-                    Unreal Engine
+                <div id="tools-unreal-engine">
+                    <img 
+                        src={unrealEngineScreenshotOne}
+                        alt="Unreal Engine Screenshot One"
+                    />
+
+                    <h3>Unreal Engine</h3>
+                    <div>
+                        The Unreal Engine will be our first choice when it comes
+                        to using a powerful 3D Engine to create computer and console games. 
+                    </div>
+
+                    <img 
+                        src={unrealEngineScreenshotTwo}
+                        alt="Unreal Engine Screenshot Two"
+                    />
                 </div>
 
-                <div>
-                    The Unreal Engine will be our first choice when it comes
-                    to using a powerful 3D Engine to create computer and console games.
-                </div>
+                <div id="tools-fullstack-development">
+                    <h3>FullStack Development</h3>
 
-                
-                <img 
-                    src={unrealEngineScreenshotTwo}
-                    alt="Unreal Engine Screenshot Two"     
-                />    
+                    <div>
+                        <img 
+                            src={react}
+                            alt="React Logo"
+                        />
+
+                        <img 
+                            src={reactRouter}
+                            alt="React Router Logo"
+                        />
+
+                        <img 
+                            src={javascript}
+                            alt="JavaScript Logo"
+                        />
+                    </div>
+                    <div>
+                        Most of our browser applications will be designed with various
+                        fullstack development tools and frameworks such as React Js,
+                        Node.Js, React Router, JavaScript, and many more.
+                    </div>
+                </div>
             </div>
 
-            <div id="fullstack-development">
-                <div>FullStack Development</div>
+            <div id="projects">
+               <h2>Projects</h2>
+
+               <div id="project-links">
+                    <div>
+                        <Link to="/projects/The Electronic One">
+                            <img 
+                                src={theElectronicOneLogoTitleSymbol}
+                                alt="The Electronic One Logo Symbol"
+                            />
+                        </Link>
+                    </div>
+
+                    <div>
+                        <Link to="/projects/Strive">
+                            <img 
+                                src={striveBannerConceptTitle3}
+                                alt="Strive Banner Concept Title 3"
+                            />
+                        </Link>
+                    </div>
+
+                    <div>
+                        <Link to="/projects/Cerebral">
+                            <img 
+                                src={cerebralConceptLogo2}
+                                alt="Cerebral Concept Logo 2"
+                            />
+                        </Link>
+                    </div>
+               </div>         
+            </div>
+
+            <div id="streaming">
+                <h2>Streaming</h2>
+
                 <div>
-                    <img 
-                        src={react}
-                        alt="React Logo"
-                    />
-
-                    <img 
-                        src={reactRouter}
-                        alt="React Router Logo"
-                    />
-
-                    <img 
-                        src={javascript}
-                        alt="JavaScript Logo"
-                    />
+                    <TwitchLogo />
+                    <YouTubeLogo />
                 </div>
+
                 <div>
-                    Most of our browser applications will be designed with various
-                    fullstack development tools and frameworks such as React Js,
-                    Node.Js, React Router, JavaScript, and many more. 
+                    Twitch and YouTube are two platforms where you can find SoSuThirteen. SoSuThirteen is our streaming
+                    subsidiary platform where we will be streaming various amount of games from retro to current generation.
                 </div>
             </div>
         </div>

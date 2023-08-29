@@ -1,0 +1,17 @@
+/* |Workspace Windows| */
+
+
+/* Media Section - For mobile devices and tablets */
+/* media-0 - Desktop miniaturization and mobile devices. */
+@media only screen and (max-width: 600px){
+    .workspace-window-component-container{
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        overflow-y: scroll;
+        /* border: 1px solid black; */
+        background-color: purple;
+    }
+}

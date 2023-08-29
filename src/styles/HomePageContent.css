@@ -19,60 +19,124 @@
         /* border: 1px solid black; */
     }
 
+    /* |Tools| */
     #tools{
-        font-family: rockinline;
-        font-weight: bold;
-        font-size: 30px;
-        letter-spacing: 3px;
-    }
-
-    #unreal-engine{
         display: flex;
         flex-direction: column;
         gap: 10px;
-        padding: 10px
     }
-    #unreal-engine > div:nth-child(2){
+    #tools > h2{
+        font-family: rockinline, system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; 
         letter-spacing: 3px;
-        font-family: rockinline;
-        font-size: 18px;
+        font-size: 28px;
+        margin-bottom: 0;
     }
-    #unreal-engine > img[src]{
+    #tools > div{
+        border: 1px solid red;
+    }
+    /* Tools | Unreal Engine */
+    #tools-unreal-engine{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        padding: 10px;
+    }
+    #tools-unreal-engine > h3{ /* Title */
+        letter-spacing: 3px;
+        font-family: rockinline, system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    }
+    #tools-unreal-engine > img[src]{ /* Screenshots */
         width: 100%;
         height: 200px;
         border-radius: 10px;
         text-align: center;
     }
-    #unreal-engine > div:nth-child(3){
+    #tools-unreal-engine > div{ /* Caption */
         color: #f59e0b;
         font-size: 18px;
     }
-
-    #fullstack-development{
+    /* Tools | Fullstack Development */
+    #tools-fullstack-development{
         display: flex;
         flex-direction: column;
         gap: 10px;
+
         padding: 10px;
     }
-    #fullstack-development > div:nth-child(1){
-        font-family: rockinline;
+    #tools-fullstack-development > h3{ /* Title */
+        font-family: rockinline, system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
         letter-spacing: 3px;
-        font-size: 18px;
     }
-    #fullstack-development > div:nth-child(2){
+    #tools-fullstack-development > div:nth-child(2){ /* Screenshot container */
         display: flex;
         justify-content: space-evenly;
         gap: 10px;
     }
-    #fullstack-development > div img[src]{
+    #tools-fullstack-development > div:nth-child(2) > img[src]{ /* Screenshots */
         width: 50px;
         height: 50px;
         border-radius: 10px;
     }
-    #fullstack-development > div:nth-child(3){
+    #tools-fullstack-development > div:nth-child(3){ /* Caption */
         font-size: 18px;
         color: #f59e0b;
     }
- 
-    
+
+    /* |Projects| */
+    #projects{
+        display: flex;
+        flex-direction: column;
+
+        padding: 10px;
+        border: 1px solid black;
+    }
+    #projects > h2{ /* Title */
+        font-family: rockinline, system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+        letter-spacing: 3px;
+        font-size: 28px;
+        margin-bottom: 0;
+    }
+    /* Projects | Project Links */
+    #project-links{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+    #project-links > div{
+        width: 100%;
+        height: 150px;
+    }
+    #project-links > div > a > img[src]{ /* Links */
+        border: 1px solid black;
+        border-radius: 10px;
+        width: 100%;
+        height: 100%;
+    }
+
+    /* |Streaming| */
+    #streaming{
+        border: 1px solid black;
+        padding: 10px;
+    }
+    #streaming > h2{
+        font-family: rockinline, system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+        letter-spacing: 3px;
+        font-size: 28px;
+        margin-bottom: 0;
+    }
+    #streaming > div:nth-child(2){
+        display: flex;
+        align-items: center;
+        /* border: 1px solid black; */
+    }
+    #streaming > div > div:nth-child(2) > svg{ /* YouTube Logo */
+        width: 100%;
+        height:  100%;
+    }
+    #streaming > div:nth-child(3){
+        font-size: 18px;
+        color: #f59e0b;
+    }
 }

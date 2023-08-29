@@ -1,0 +1,14 @@
+/* |Projects Component Container| */
+
+/* projects-component-container - The projects component container. */
+
+/* Media Section - For mobile devices and tablets */
+/* media-0 - Desktop miniaturization and mobile devices. */
+@media only screen and (max-width: 600px){
+    .projects-component-container{
+        padding: 10px;
+    }
+    .projects-component-container > img[src]{
+        border-radius: 10px;
+    }
+}

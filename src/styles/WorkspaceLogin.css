@@ -6,23 +6,37 @@
 @media only screen and (max-width: 600px){
     /* |Workspace Login|*/
     #workspace-login{
-        border: 1px solid black;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
         padding: 10px;
         font-size: 18px;
+        margin-top: 100px;
     }
-    #workspace-login > div:nth-child(1) > label{
+    #workspace-login > div:nth-child(1){
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 3px;
+    }
+    #workspace-login > div:nth-child(1) > label{ /* Title */
         font-family: rockinline, system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
         font-weight: bold;
         letter-spacing: 3px;
-    }
-    #workspace-login > div:nth-child(1) > p{
         color:#f59e0b;
+    }
+    #workspace-login > div:nth-child(1) > p{ /* caption */ 
+        color:#f59e0b;
+        text-align: center;
     }
     #workspace-login > div:nth-child(1) > input{
         border-radius: 10px;
         border: 1px solid #a1a1aa;
         padding: 5px 10px 5px 10px;
         font-size: 17px;
+        background-color: inherit;
+        color: #e2e8f0;
     }
     #workspace-login > div:nth-child(1) > input:focus{
         outline: none;
@@ -33,6 +47,8 @@
         border-radius: 10px;
         border: 1px solid #a1a1aa;
         font-size: 18px;
-        color: #3f3f46;
+        color: #f59e0b;
+        background-color: inherit;
+
     }
 }

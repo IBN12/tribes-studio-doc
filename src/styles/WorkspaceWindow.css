@@ -11,7 +11,8 @@
         width: 100%;
         height: 100%;
         overflow-y: scroll;
-        /* border: 1px solid black; */
-        background-color: purple;
+        background: linear-gradient(to right, #000428, #004e92);
     }
+
+
 }

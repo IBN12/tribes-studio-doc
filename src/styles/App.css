@@ -5,14 +5,35 @@
     font-family: rockinline;
     src: url(../fonts/rockinline/Rockinline.ttf);
 }
-
-/* app-component-container - The root component container. */
-
+/********************************************************************************************************************************************************************************/
+/********************************************************************************************************************************************************************************/
 
 /* Media Section - For mobile devices and tablets */
 /* media-0 - Desktop miniaturization and mobile devices. */
 @media only screen and (max-width: 600px){
     /* app-component-container - The root component container. */
+    .app-component-container > div:nth-child(1){
+        display: flex;
+        justify-content:space-between;
+        gap: 5px;
+    }
+    .app-component-container > div:nth-child(1) > button:nth-child(1){ /* Dropdown Menu */
+        border: 1px solid rgba(0, 0, 0, 0);
+        background-color: inherit;
+    }
+    .app-component-container > div:nth-child(1) > button:nth-child(1) > svg{
+        width: 40px;
+        height: 40px;
+    }
+    .app-component-container > div:nth-child(1) > button:nth-child(2){ /* Workspace Station button */
+        font-size: 18px;
+        border-radius: 10px;
+        border: 1px solid #9ca3af;
+        padding: 5px 10px 5px 10px;
+        color:#f59e0b;
+        background-color: inherit;
+        
+    }
     .app-component-container > h1 {
         text-align: center;
         color: #27272a;

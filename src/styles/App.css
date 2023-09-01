@@ -17,7 +17,7 @@
         justify-content:space-between;
         gap: 5px;
     }
-    .app-component-container > div:nth-child(1) > button:nth-child(1){ /* Dropdown Menu */
+    .app-component-container > div:nth-child(1) > button:nth-child(1){ /* Dropdown Menu button */
         border: 1px solid rgba(0, 0, 0, 0);
         background-color: inherit;
     }

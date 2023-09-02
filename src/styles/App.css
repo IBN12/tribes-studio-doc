@@ -21,6 +21,9 @@
         border: 1px solid rgba(0, 0, 0, 0);
         background-color: inherit;
     }
+    .app-component-container > div:nth-child(1) > button:nth-child(1){
+        padding: 0;
+    }
     .app-component-container > div:nth-child(1) > button:nth-child(1) > svg{
         width: 40px;
         height: 40px;

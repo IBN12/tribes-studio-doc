@@ -1,5 +1,28 @@
 /* |Nav Dropdown Component Container| */
 
+/* font-1 - Rockinline */
+@font-face {
+    font-family: rockinline;
+    src: url(../fonts/rockinline/Rockinline.ttf);
+}
+
+/* font-2 - Army of Darkness */
+@font-face {
+    font-family: army-of-darkness;
+    src: url(../fonts/army-of-darkness/ARMYD___.TTF);
+}
+
+/* font-3 - Square Space */
+@font-face {
+    font-family: square-space;
+    src: url("../fonts/square-space/Square Space.ttf");
+}
+
+/* font-4 - Sever */
+@font-face {
+    font-family: sever;
+    src: url(../fonts/sever/Severv2.ttf);
+}
 
 /* Media Section - For mobile devices and tablets */
 /* media-0 - Desktop miniaturization and mobile devices. */
@@ -10,6 +33,36 @@
         top: 0;
         left: 0;
         background: linear-gradient(to right, #ffd89b, #19547b);
+    }
+
+    .nav-dropdown-content{
+        display: flex;
+        flex-direction: column;
+        /* border: 1px solid black; */
+        padding: 10px;
+    }
+    .nav-dropdown-content > h2{
+        font-family: rockinline, system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; 
+        letter-spacing: 3px;
+        margin: 0;
+    }
+    .nav-dropdown-content > a{
+        text-decoration: none;
+        color: #27272a;
+        margin-bottom: 15px;
+        margin-left: 10px;
+    }
+    .nav-dropdown-content > a:nth-child(2){
+        font-family: army-of-darkness, system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; 
+        font-size: 30px;
+    }
+    .nav-dropdown-content > a:nth-child(3){
+        font-family: sever, system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; 
+        font-size: 25px;
+    }
+    .nav-dropdown-content > a:nth-child(4){
+        font-family: square-space, system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; 
+        font-size: 22px;
     }
 
 }

@@ -1,11 +1,16 @@
 import './styles/App.css';
 import './styles/WorkspaceWindow.css';
 import './styles/NavDropdown.css';
+
 import { HomePageContent } from './components/HomePageContent';
-import { WorkspaceLogin } from './components/WorkspaceLogin';
 import { CloseButton } from './components/CloseButton';
+import { Workspace } from './components/Workspace';
+import { FooterContent } from './components/FooterContent';
+
 import { motion } from 'framer-motion';
+
 import { useState } from 'react';
+
 import { Link } from 'react-router-dom';
 
 // workspace variant:
@@ -25,11 +30,16 @@ const App = () => {
   const [displayWorkspaceWindow, setDisplayWorkspaceWindow] = useState(false);
   const [displayNavDropdown, setDisplayNavDropdown] = useState(false);
   const [displayNavDropdownContent, setDisplayNavDropdownContent] = useState(false);
+  const [disableProjectLinks, setDisableProjectLinks] = useState(false);
 
   function workspaceStation(e){
     console.log("Workspace Station");
     console.log(e.target);
     setDisplayWorkspaceWindow(true);
+    setDisableProjectLinks(true);
+
+    const body = document.querySelector('body');
+    body.setAttribute('style', 'overflow-y: hidden');
   }
 
   function navigationDropdown(){
@@ -37,9 +47,13 @@ const App = () => {
 
     setTimeout(()=>{
       setDisplayNavDropdownContent(true);
-    }, 1000);
+    }, 600);
 
     setDisplayNavDropdown(true);
+    setDisableProjectLinks(true);
+
+    const body = document.querySelector('body');
+    body.setAttribute('style', 'overflow-y: hidden');
   }
 
   return (
@@ -54,6 +68,7 @@ const App = () => {
         <button onClick={workspaceStation}>Workspace Station</button>
       </div>
 
+      {/* Dropdown Menu Container */}
       <motion.div 
           className="nav-dropdown-component-container"
           variants={navDropdown}
@@ -74,6 +89,7 @@ const App = () => {
                       setDisplayWorkspaceWindow={setDisplayWorkspaceWindow}
                       setDisplayNavDropdown={setDisplayNavDropdown}
                       setDisplayNavDropdownContent={setDisplayNavDropdownContent}
+                      setDisableProjectLinks={setDisableProjectLinks}
                     />
                     <div className="nav-dropdown-content">
                       <h2>Projects</h2>
@@ -90,7 +106,8 @@ const App = () => {
               null
             }
       </motion.div>
-
+      
+      {/* Workspace Window Container */}
       <motion.div
         className="workspace-window-component-container"
         variants={workspace}
@@ -100,7 +117,7 @@ const App = () => {
           :
           "hidden"
         }
-        transition={{duration: 0.8, ease: "easeIn", type: "spring", bounce: 0.3}}>
+        transition={{duration: 0.6, ease: "easeIn", type: "spring", bounce: 0.3}}>
           
           {displayWorkspaceWindow  && (
             <>
@@ -110,8 +127,10 @@ const App = () => {
                 setDisplayWorkspaceWindow={setDisplayWorkspaceWindow}
                 setDisplayNavDropdown={setDisplayNavDropdown}
                 setDisplayNavDropdownContent={setDisplayNavDropdownContent}
+                setDisableProjectLinks={setDisableProjectLinks}
               />
-              <WorkspaceLogin/>
+
+              <Workspace />
             </>
           )}
       </motion.div>
@@ -120,7 +139,11 @@ const App = () => {
       <h1>SoSu Studio Documentation</h1>
       <p>Powered & Controlled by SoSu Plus +</p>
 
-      <HomePageContent />
+      <HomePageContent
+        disableProjectLinks={disableProjectLinks}
+      />
+
+      <FooterContent />
     </div>
   );
 }

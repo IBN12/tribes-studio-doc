@@ -1,0 +1,59 @@
+/* |Footer Component Container|*/
+
+/* font-1 - Rockinline font */
+@font-face {
+    font-family: rockinline;
+    src: url(../fonts/rockinline/Rockinline.ttf);
+}
+
+/*******************************************************************************************************************************************************************************/
+/*******************************************************************************************************************************************************************************/
+/* Media Section - For mobile devices and tablets */
+/* media-0 - Desktop miniaturization and mobile devices. */
+@media only screen and (max-width: 600px){
+    /* footer-component-container - The footer component container. */ 
+    .footer-content-component-container{
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+
+        /* border: 1px solid black; */
+        padding: 10px;
+        margin-top: 10px;
+        background-color: #1e293b;
+        color: #d4d4d8;
+    }
+    .footer-content-component-container > div{
+        /* border: 1px solid black; */
+    }
+
+    .footer-content-component-container > div:nth-child(1){ /* Join The Journey */
+        padding: 10px;
+    }
+    .footer-content-component-container > div:nth-child(1) > h2{ 
+        font-family: rockinline, system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; 
+        letter-spacing: 3px;    
+        text-align: center;
+        margin: 0;
+    }
+
+    .footer-content-component-container > div:nth-child(2){ /* Social Media Platforms */
+        display: flex;
+        justify-content: space-evenly;
+        padding: 10px;
+    }
+    .footer-content-component-container > div:nth-child(2) > a{
+        width: 40px;
+        height: 40px;
+    }
+    .footer-content-component-container > div:nth-child(2) > a > img[src]{
+        width: 100%;
+        height: 100%;
+    }
+
+    .footer-content-component-container > div:nth-child(3){ /* Copyright year*/
+        font-size: 18px;
+        text-align: center;
+        padding: 10px;
+    }
+}

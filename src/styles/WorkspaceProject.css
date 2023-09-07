@@ -1,0 +1,39 @@
+/* |Workspace Project Component Container| */
+
+/* font-1 - Rockinline font */
+@font-face {
+    font-family: rockinline;
+    src: url(../fonts/rockinline/Rockinline.ttf);
+}
+
+/*************************************************************************************************************************************************************/
+/*************************************************************************************************************************************************************/
+/* Media Section - For mobile devices and tablets */
+/* media-0 - Desktop miniaturization and mobile devices. */
+@media only screen and (max-width: 600px){
+    /* workspace-projects-component-container - The workspace projects component container. */
+    .workspace-projects-component-container{
+        /* border: 1px solid black; */
+    }
+    .workspace-projects-component-container > h1{
+        font-family: rockinline, system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; 
+    }
+
+    .workspace-content-section{ /* Workspace content for each workspace project */
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        /* border: 1px solid black; */
+        padding:10px;
+        height: 100vh;
+    }
+    .workspace-content-section > div{
+        /* border: 1px solid black; */
+        width: 100%;
+    }
+    .workspace-content-section > div > img[src]{
+        width: 100%;
+        height: 100%;
+    }
+}

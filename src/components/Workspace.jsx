@@ -1,13 +1,16 @@
-import { Link } from "react-router-dom";
+import "../styles/Workspace.css";
 
+import { Link } from "react-router-dom";
 // Workspace(): The workspace component container.
 export const Workspace = () => {
-    // const navigate = useNavigate();
-
     return(
-        <div className="work-space-component-container">
-            <Link to="/" replace={true}>Back to home</Link>
-            <h1>SoSu Workspace</h1>
+        <div className="workspace-component-container">
+            <h2>Workspace Station</h2>
+            
+            <div>
+                <p>Date: September-5-2023</p>
+                <Link to="workspace/Logo Design">SoSu Logo Design Build</Link>
+            </div>
         </div>
     );
 }

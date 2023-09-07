@@ -32,7 +32,7 @@
         margin-bottom: 0;
     }
     #tools > div{
-        border: 1px solid red;
+        /* border: 1px solid red; */
     }
     /* Tools | Unreal Engine */
     #tools-unreal-engine{
@@ -89,7 +89,7 @@
         flex-direction: column;
 
         padding: 10px;
-        border: 1px solid black;
+        /* border: 1px solid black; */
     }
     #projects > h2{ /* Title */
         font-family: rockinline, system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
@@ -109,7 +109,7 @@
         height: 150px;
     }
     #project-links > div > a > img[src]{ /* Links */
-        border: 1px solid black;
+        /* border: 1px solid black; */
         border-radius: 10px;
         width: 100%;
         height: 100%;
@@ -117,26 +117,34 @@
 
     /* |Streaming| */
     #streaming{
-        border: 1px solid black;
+        /* border: 1px solid black; */
         padding: 10px;
     }
-    #streaming > h2{
+    #streaming > h2{ /* Streaming Title  */
         font-family: rockinline, system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
         letter-spacing: 3px;
         font-size: 28px;
         margin-bottom: 0;
     }
-    #streaming > div:nth-child(2){
+
+    #streaming > div:nth-child(2){ /* Stream Platforms */
         display: flex;
-        align-items: center;
-        /* border: 1px solid black; */
+        justify-content: space-evenly;
+
+        padding: 10px;
     }
-    #streaming > div > div:nth-child(2) > svg{ /* YouTube Logo */
+    #streaming > div:nth-child(2) > a{
+        width: 100px;
+        height: 50px;
+    }
+    #streaming > div:nth-child(2) > a > img[src]{
         width: 100%;
-        height:  100%;
+        height: 100%;
     }
-    #streaming > div:nth-child(3){
+
+    #streaming > div:nth-child(3){ /* Caption */
         font-size: 18px;
         color: #f59e0b;
+        padding: 10px;
     }
 }

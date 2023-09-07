@@ -6,16 +6,21 @@ import theElectronicOneLogoTitleSymbol from '../images/The_Electronic_One_Logo_C
 import striveBannerConceptTitle3 from '../images/Strive_Banner_Concept_Title_3.png';
 import cerebralConceptLogo2 from '../images/Cerebral_Concept_Logo_2.png';
 import react from '../images/React.png';
-import { TwitchLogo } from './TwitchLogo';
-import { YouTubeLogo } from './YouTubeLogo';
+
+import twitchTvLogo from '../images/TwitchTv_Full_Logo.png';
+import youtubeLogo from '../images/youtube_logo.png';
 
 import reactRouter from '../images/React-Router.png';
 import javascript from '../images/JavaScript-logo.png';
 
 import { Link } from 'react-router-dom';
 
+import PropTypes from 'prop-types';
+
 // HomePageContent(): The home page content component container.s
-export const HomePageContent = () => {
+export const HomePageContent = (props) => {
+    const {disableProjectLinks} = props;
+
     return (
         <div className="home-page-content-component-container">
             <div id="tools">
@@ -70,32 +75,65 @@ export const HomePageContent = () => {
                <h2>Projects</h2>
 
                <div id="project-links">
-                    <div>
-                        <Link to="/projects/The Electronic One">
-                            <img 
-                                src={theElectronicOneLogoTitleSymbol}
-                                alt="The Electronic One Logo Symbol"
-                            />
-                        </Link>
-                    </div>
+                    {disableProjectLinks ?
+                        <>
+                            <div>
+                                <Link>
+                                    <img 
+                                        src={theElectronicOneLogoTitleSymbol}
+                                        alt="The Electronic One Logo Symbol"
+                                    />
+                                </Link>
+                            </div>
 
-                    <div>
-                        <Link to="/projects/Strive">
-                            <img 
-                                src={striveBannerConceptTitle3}
-                                alt="Strive Banner Concept Title 3"
-                            />
-                        </Link>
-                    </div>
+                            <div>
+                                <Link>
+                                    <img 
+                                        src={striveBannerConceptTitle3}
+                                        alt="Strive Banner Concept Title 3"
+                                    />
+                                </Link>
+                            </div>
 
-                    <div>
-                        <Link to="/projects/Cerebral">
-                            <img 
-                                src={cerebralConceptLogo2}
-                                alt="Cerebral Concept Logo 2"
-                            />
-                        </Link>
-                    </div>
+                            <div>
+                                <Link>
+                                    <img 
+                                        src={cerebralConceptLogo2}
+                                        alt="Cerebral Concept Logo 2"
+                                    />
+                                </Link>
+                            </div>
+                        </>
+                        :
+                        <>
+                            <div>
+                                <Link to="/projects/The Electronic One">
+                                    <img 
+                                        src={theElectronicOneLogoTitleSymbol}
+                                        alt="The Electronic One Logo Symbol"
+                                    />
+                                </Link>
+                            </div>
+
+                            <div>
+                                <Link to="/projects/Strive">
+                                    <img 
+                                        src={striveBannerConceptTitle3}
+                                        alt="Strive Banner Concept Title 3'"
+                                    />
+                                </Link>
+                            </div>
+
+                            <div>
+                                <Link to="/projects/Cerebral">
+                                    <img 
+                                        src={cerebralConceptLogo2}
+                                        alt="Cerebral Concept Logo 2"
+                                    />
+                                </Link>
+                            </div>
+                        </>
+                    }
                </div>         
             </div>
 
@@ -103,8 +141,19 @@ export const HomePageContent = () => {
                 <h2>Streaming</h2>
 
                 <div>
-                    <TwitchLogo />
-                    <YouTubeLogo />
+                    <Link to="#">
+                        <img 
+                            src={twitchTvLogo}
+                            alt="TwitchTv Logo"
+                        />
+                    </Link>
+
+                    <Link to="#">
+                        <img 
+                            src={youtubeLogo}
+                            alt="YouTube Logo"
+                        />
+                    </Link>
                 </div>
 
                 <div>
@@ -115,3 +164,8 @@ export const HomePageContent = () => {
         </div>
     );
 }
+
+// HomePageContent PropTypes: 
+HomePageContent.propTypes = {
+    disableProjectLinks: PropTypes.bool,
+};

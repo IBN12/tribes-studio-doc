@@ -13,6 +13,8 @@ export const Projects = () => {
 
     useEffect(()=>{
         console.log("URL Parameters: ", projectId);
+        const body = document.querySelector('body');
+        body.removeAttribute('style');
     });
 
     return (
@@ -44,6 +46,10 @@ export const Projects = () => {
                 :
                 null
             }
+
+            <div className="project-content-section">
+                <div>Content Coming Soon...</div>
+            </div>
         </div>
     );
 }

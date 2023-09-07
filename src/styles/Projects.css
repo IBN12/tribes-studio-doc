@@ -1,14 +1,30 @@
 /* |Projects Component Container| */
 
-/* projects-component-container - The projects component container. */
+/* font-1 - Rockinline font */
+@font-face {
+    font-family: rockinline;
+    src: url(../fonts/rockinline/Rockinline.ttf);
+}
 
 /* Media Section - For mobile devices and tablets */
 /* media-0 - Desktop miniaturization and mobile devices. */
 @media only screen and (max-width: 600px){
+    /* projects-component-container - The projects component container. */
     .projects-component-container{
         padding: 10px;
     }
     .projects-component-container > img[src]{
         border-radius: 10px;
+    }
+
+    .project-content-section{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        /* border: 1px solid orange; */
+        font-family: rockinline, system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; 
+        letter-spacing: 3px;
+        margin-top:30px;
     }
 }

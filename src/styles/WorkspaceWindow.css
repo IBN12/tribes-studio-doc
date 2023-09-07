@@ -1,9 +1,16 @@
 /* |Workspace Window Component Container| */
 
+/* font-1 - Rockinline font */
+@font-face {
+    font-family: rockinline;
+    src: url(../fonts/rockinline/Rockinline.ttf);
+}
+
 
 /* Media Section - For mobile devices and tablets */
 /* media-0 - Desktop miniaturization and mobile devices. */
 @media only screen and (max-width: 600px){
+    /* workspace-window-component-container - The workspace component container. */
     .workspace-window-component-container{
         position: fixed;
         top: 0;
@@ -13,6 +20,4 @@
         overflow-y: scroll;
         background: linear-gradient(to right, #000428, #004e92);
     }
-
-
 }

@@ -6,7 +6,7 @@ import { Projects } from "./components/Projects";
 import { PageNavigation } from "./components/Navigation";
 import { WorkspaceProject } from "./components/WorkspaceProject";
 
-// Testing Function: HelloWorld():
+// Testing Function: HelloWorld(): 
 function HelloWorld(){
     console.log("Hello World!"); // Testing
     if (window.innerWidth <= 600)

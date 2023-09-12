@@ -6,6 +6,180 @@
     src: url(../fonts/rockinline/Rockinline.ttf);
 }
 
+/*************************************************************************************************************************************************************/
+/*************************************************************************************************************************************************************/
+/* home-page-content-component-container - The homepage content component container. */
+.home-page-content-component-container{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+.home-page-content-component-container > div{
+    /* border: 1px solid black; */
+}
+
+/* |Tools| */
+#tools{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    
+    padding: 10px;
+    width: 1000px;
+    margin: 0 auto;
+}
+#tools > div{
+    /* border: 1px solid rgba(0, 0, 0, 0); */
+    border-radius: 10px;
+    box-shadow: 20px 15px 20px 1px black;
+}
+
+/* Tools | Unreal Engine */
+#tools-unreal-engine{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+
+    padding: 10px;
+}
+#tools-unreal-engine > h2{ /* Unreal Engine Header*/
+    letter-spacing: 3px;
+    font-size: 28px;
+    font-family: rockinline, system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; 
+    margin: 0;
+}
+#tools-unreal-engine > img[src]{ /* screenshots*/   
+    width: 450px;
+    height: 250px;
+    border-radius: 10px;
+}
+#tools-unreal-engine > div{ /* caption */
+    color:#18181b;
+    font-size: 20px;
+    text-align: center;
+}
+
+/* Tools | Fullstack Development */
+#tools-fullstack-development{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    
+    padding: 10px;
+}
+#tools-fullstack-development > h2{ /* Fullstack Development Header */
+    font-family: rockinline, system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    letter-spacing: 3px;
+    font-size: 28px;
+    text-align: center;
+    margin: 0;
+}
+#tools-fullstack-development > div:nth-child(2){ /* Screenshot container */
+    display: flex;
+    justify-content: space-evenly;
+    gap: 10px;
+
+    margin-bottom: 20px;
+}
+#tools-fullstack-development > div:nth-child(2) > img[src]{ /* Screenshots */
+    width: 150px;
+    height: 150px;
+    border-radius: 10px;
+}
+#tools-fullstack-development > div:nth-child(3){ /* Caption */
+    font-size: 20px;
+    color: #18181b;
+    text-align: center;
+}
+
+/* |Projects| */
+#projects{
+    display: flex;
+    flex-direction: column;
+    
+    padding: 10px;
+    /* border: 1px solid  black; */
+    width: 1000px;
+    margin: 0 auto;
+    box-shadow: 20px 15px 20px 1px black;
+    border-radius: 10px;
+}
+#projects > h2{ /* Title*/
+    font-family: rockinline, system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; 
+    font-size: 28px;
+    letter-spacing: 3px; 
+    margin-bottom: 0;
+    text-align: center;
+}
+
+/* Projects | Project Links */
+#project-links{
+    display: flex;
+    flex-direction: row;
+    align-items:none;
+    justify-content: space-evenly;
+    gap: 10px;
+
+    padding: 10px;
+}
+#project-links > div{
+    width: 400px;
+    height: 200px;
+}
+#project-links > div > a > img[src]{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    transition-duration: 0.5s;
+    transition-timing-function: ease-in-out;
+    transition-property: all;
+}
+/* Images will scale in value. */
+.scale-project-image{
+    scale:1.7;
+}
+
+/* |Streaming| */
+#streaming{
+    /* border: 1px solid black; */
+    padding: 10px;
+    width: 1000px;
+    margin: 0 auto;
+    box-shadow: 20px 15px 20px 1px black;
+    border-radius: 10px;
+}
+#streaming > h2{ /* Streaming Title */
+    font-family: rockinline, system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    letter-spacing: 3px;
+    font-size: 28px;
+    margin-bottom: 0;
+    text-align: center;
+}
+#streaming > div:nth-child(2){ /* streaming platforms */
+    display: flex;
+    justify-content: space-evenly;
+
+    padding: 10px;
+    margin-bottom: 20px;
+}
+#streaming > div:nth-child(2) > a{
+    width: 150px; 
+    height: 100px;
+}
+#streaming > div:nth-child(2) > a > img[src]{
+    width: 100%; 
+    height: 100%;
+}
+#streaming > div:nth-child(3){ /* Caption */
+    font-size: 20px;
+    color:#18181b;
+    text-align: center;
+}
+
+
+/**********************************************************************************************************************************************************/
+/**********************************************************************************************************************************************************/
 /* Media Section - For mobile devices and tablets */
 /* media-0 - Desktop miniaturization and mobile devices. */
 @media only screen and (max-width: 600px) {
@@ -24,38 +198,44 @@
         display: flex;
         flex-direction: column;
         gap: 10px;
-    }
-    #tools > h2{
-        font-family: rockinline, system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; 
-        letter-spacing: 3px;
-        font-size: 28px;
-        margin-bottom: 0;
+
+        padding: 0;
+        width: auto;
+        margin: 0;
     }
     #tools > div{
-        /* border: 1px solid red; */
+        border: 1px solid red;
+        border-radius: 0;
+        box-shadow: none;
     }
     /* Tools | Unreal Engine */
     #tools-unreal-engine{
         display: flex;
         flex-direction: column;
+        align-items:start;
         gap: 10px;
 
         padding: 10px;
     }
-    #tools-unreal-engine > h3{ /* Title */
+    #tools-unreal-engine > h2{ /* Unreal Engine Header */
         letter-spacing: 3px;
         font-family: rockinline, system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+        text-align: left;
+        font-size: 28px;
+        margin: 0;
     }
     #tools-unreal-engine > img[src]{ /* Screenshots */
         width: 100%;
         height: 200px;
         border-radius: 10px;
-        text-align: center;
+        /* text-align: center; */
     }
     #tools-unreal-engine > div{ /* Caption */
         color: #f59e0b;
         font-size: 18px;
+        text-align: left;
     }
+
     /* Tools | Fullstack Development */
     #tools-fullstack-development{
         display: flex;
@@ -64,14 +244,19 @@
 
         padding: 10px;
     }
-    #tools-fullstack-development > h3{ /* Title */
+    #tools-fullstack-development > h2{ /* Fullstack Development Title */
         font-family: rockinline, system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+        font-size: 28px;
         letter-spacing: 3px;
+        text-align: left;
+        margin: 0;
     }
     #tools-fullstack-development > div:nth-child(2){ /* Screenshot container */
         display: flex;
         justify-content: space-evenly;
         gap: 10px;
+
+        margin-bottom: 0;
     }
     #tools-fullstack-development > div:nth-child(2) > img[src]{ /* Screenshots */
         width: 50px;
@@ -81,6 +266,7 @@
     #tools-fullstack-development > div:nth-child(3){ /* Caption */
         font-size: 18px;
         color: #f59e0b;
+        text-align: left;
     }
 
     /* |Projects| */
@@ -89,20 +275,28 @@
         flex-direction: column;
 
         padding: 10px;
-        /* border: 1px solid black; */
+        border: 1px solid black;
+        width: auto;
+        margin: 0;
+        box-shadow: none;
+        border-radius: 0;
     }
-    #projects > h2{ /* Title */
+    #projects > h2{ /* Projects Header */
         font-family: rockinline, system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
         letter-spacing: 3px;
         font-size: 28px;
         margin-bottom: 0;
+        text-align: left;
     }
     /* Projects | Project Links */
     #project-links{
         display: flex;
         flex-direction: column;
         align-items: center;
+        justify-content: none;
         gap: 10px;
+
+        padding: 0;
     }
     #project-links > div{
         width: 100%;
@@ -117,14 +311,19 @@
 
     /* |Streaming| */
     #streaming{
-        /* border: 1px solid black; */
+        border: 1px solid black;
+        border-radius: 0;
+        box-shadow: none;
         padding: 10px;
+        width: auto; 
+        margin: 0;
     }
     #streaming > h2{ /* Streaming Title  */
         font-family: rockinline, system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
         letter-spacing: 3px;
         font-size: 28px;
         margin-bottom: 0;
+        text-align: left;
     }
 
     #streaming > div:nth-child(2){ /* Stream Platforms */
@@ -132,6 +331,7 @@
         justify-content: space-evenly;
 
         padding: 10px;
+        margin-bottom: 0;
     }
     #streaming > div:nth-child(2) > a{
         width: 100px;
@@ -146,5 +346,6 @@
         font-size: 18px;
         color: #f59e0b;
         padding: 10px;
+        text-align: left;
     }
 }

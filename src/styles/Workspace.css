@@ -5,6 +5,38 @@
     font-family: rockinline;
     src: url(../fonts/rockinline/Rockinline.ttf);
 }
+/*******************************************************************************************************************************************************************************/
+/*******************************************************************************************************************************************************************************/
+/* workspace-component-container - The workspace component container. */
+.workspace-component-container{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    
+    padding: 10px;
+}
+
+.workspace-component-container > h2{ /* Workspace Header */
+    color:#f4f4f5;
+    font-family: rockinline, system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; 
+    letter-spacing: 3px;
+    margin: 0;
+}
+
+.workspace-component-container > div{ /* Each workspace project */
+    border: 1px solid #f4f4f5;
+    border-radius: 10px;
+    color:#f4f4f5;
+    font-size: 20px;
+}
+.workspace-component-container > div:hover{
+    background: #166534;
+}
+
+.workspace-component-container > div > a{ /* Links to each workspace project. */
+    text-decoration: none;
+    color:#f59e0b;
+}
 
 /*******************************************************************************************************************************************************************************/
 /*******************************************************************************************************************************************************************************/
@@ -15,6 +47,7 @@
         display: flex;
         flex-direction: column;
         gap: 10px;
+
         border: 1px solid green;
         padding: 10px;
     }

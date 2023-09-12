@@ -16,23 +16,42 @@ import javascript from '../images/JavaScript-logo.png';
 import { Link } from 'react-router-dom';
 
 import PropTypes from 'prop-types';
+import { useEffect } from 'react';
 
 // HomePageContent(): The home page content component container.s
 export const HomePageContent = (props) => {
     const {disableProjectLinks} = props;
 
+    useEffect(()=>{
+        const projectLinks = document.querySelectorAll('#project-links > div > a > img[src]');
+        for (let i = 0; i < projectLinks.length; i++)
+        {
+            projectLinks[i].addEventListener('mouseover', ()=>{
+                console.log("Mouse is over the image.");
+                projectLinks[i].classList.add('scale-project-image');
+            });
+        }
+
+        for (let i = 0; i < projectLinks.length; i++)
+        {
+            projectLinks[i].addEventListener('mouseout', ()=>{
+                console.log("Mouse is not over the image.");
+                projectLinks[i].classList.remove('scale-project-image');
+            });
+        }
+    });
+
     return (
         <div className="home-page-content-component-container">
             <div id="tools">
-                <h2>Tools</h2>
-
                 <div id="tools-unreal-engine">
+                    <h2>Unreal Engine</h2>
+
                     <img 
                         src={unrealEngineScreenshotOne}
                         alt="Unreal Engine Screenshot One"
                     />
 
-                    <h3>Unreal Engine</h3>
                     <div>
                         The Unreal Engine will be our first choice when it comes
                         to using a powerful 3D Engine to create computer and console games. 
@@ -45,7 +64,7 @@ export const HomePageContent = (props) => {
                 </div>
 
                 <div id="tools-fullstack-development">
-                    <h3>FullStack Development</h3>
+                    <h2>FullStack Development</h2>
 
                     <div>
                         <img 

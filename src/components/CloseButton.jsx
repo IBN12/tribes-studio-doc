@@ -10,7 +10,10 @@ export const CloseButton = (props) => {
         setDisplayWorkspaceWindow, 
         setDisplayNavDropdown, 
         setDisplayNavDropdownContent,
-        setDisableProjectLinks} = props;
+        setDisableProjectLinks,
+        setDisableNavigationLinks,
+        setDisableWorkspaceStationButton,
+        setDisableFooterLinks} = props;
 
     return (
         <div className="close-button-component-container">
@@ -21,13 +24,16 @@ export const CloseButton = (props) => {
                 if (displayWorkspaceWindow)
                 {
                     setDisplayWorkspaceWindow(false);
+                    setDisableNavigationLinks(false);
                 }
                 else if(displayNavDropdown)
                 {
                     setDisplayNavDropdown(false);
                     setDisplayNavDropdownContent(false);
+                    setDisableWorkspaceStationButton(false);
                 }
                 setDisableProjectLinks(false);
+                setDisableFooterLinks(false);
             }}>
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                     <path d="M13.46,12L19,17.54V19H17.54L12,13.46L6.46,19H5V17.54L10.54,12L5,6.46V5H6.46L12,10.54L17.54,5H19V6.46L13.46,12Z" />
@@ -43,6 +49,9 @@ CloseButton.propTypes = {
     displayWorkspaceWindow: PropTypes.bool,
     displayNavDropdown: PropTypes.bool,
     setDisableProjectLinks: PropTypes.func,
+    setDisableNavigationLinks: PropTypes.func,
+    setDisableWorkspaceStationButton: PropTypes.func,
     setDisplayNavDropdown: PropTypes.func,
     setDisplayNavDropdownContent: PropTypes.func,
+    setDisableFooterLinks: PropTypes.func,
 }

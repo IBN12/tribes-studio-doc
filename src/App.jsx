@@ -6,12 +6,15 @@ import { HomePageContent } from './components/HomePageContent';
 import { CloseButton } from './components/CloseButton';
 import { Workspace } from './components/Workspace';
 import { FooterContent } from './components/FooterContent';
+import { ProjectDropdownMenu } from './components/ProjectDropdownMenu';
 
 import { motion } from 'framer-motion';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import { Link } from 'react-router-dom';
+
+import PropTypes from 'prop-types';
 
 // workspace variant:
 const workspace ={
@@ -25,23 +28,90 @@ const navDropdown = {
   close: {x: [0, 150, 0], y: [0, 200, 0], scale: [1, 10, 1, 1, 1], borderRadius: [0, 0, 270, 270, 270], width: "0", height: "0", opacity: 0.95},
 }
 
+// projectMennuAnimate variant: 
+const projectMenuAnimate = {
+  enter: {
+    rotateX: 0,
+    transition: {
+      duration: 0.2
+    },
+    display: "block"
+  },
+  
+  exit: {
+    rotateX: -50,
+    transition: {
+      duration: 0.1,
+      delay: 0.1
+    },
+    transitionEnd:{
+      display: "none"
+    }
+  }
+}
+
 // App(): The root component container.
-const App = () => {
+const App = (props) => {
   const [displayWorkspaceWindow, setDisplayWorkspaceWindow] = useState(false);
   const [displayNavDropdown, setDisplayNavDropdown] = useState(false);
   const [displayNavDropdownContent, setDisplayNavDropdownContent] = useState(false);
   const [disableProjectLinks, setDisableProjectLinks] = useState(false);
+  const [disableNavigationLinks, setDisableNavigationLinks] = useState(false);
+  const [disableWorkspaceStationButton, setDisableWorkspaceStationButton] = useState(false);
+  const [disableFooterLinks, setDisableFooterLinks] = useState(false);
+  const [displayMobileDropdown, setDisplayMobileDropdown] = useState(false);
+  const [displayProjectMenu, setDisplayProjectMenu] = useState(false);
+  const {test} = props;
+  
+  useEffect(()=>{
+    console.log("Test: ", test);
 
+    // Checks if the browser window width is less than 600.
+    if (window.innerWidth <= 600)
+    {
+      console.log(`The inner width of the window is less than 600`); // Testing
+      setDisplayMobileDropdown(true);
+    }
+
+    // Checks if the browser window has been resized. 
+    window.addEventListener('resize', () => {
+      if (window.innerWidth <= 600)
+      {
+        setDisplayMobileDropdown(true);
+      }
+      else
+      {
+        setDisplayMobileDropdown(false);
+      }
+    });
+
+    // Checks if the browser window has been reloaded. 
+    window.addEventListener('load', () => {
+      if (window.innerWidth <= 600)
+      {
+        setDisplayMobileDropdown(true);
+      }
+      else
+      {
+        setDisplayMobileDropdown(false);
+      }
+    });
+  });
+
+  // Workspace Station function:
   function workspaceStation(e){
     console.log("Workspace Station");
     console.log(e.target);
     setDisplayWorkspaceWindow(true);
     setDisableProjectLinks(true);
+    setDisableNavigationLinks(true);
+    setDisableFooterLinks(true);
 
     const body = document.querySelector('body');
     body.setAttribute('style', 'overflow-y: hidden');
   }
 
+  // Mobile Navigation dropdown function:
   function navigationDropdown(){
     console.log("Nav Button Clicked!");
 
@@ -51,21 +121,51 @@ const App = () => {
 
     setDisplayNavDropdown(true);
     setDisableProjectLinks(true);
+    setDisableWorkspaceStationButton(true);
+    setDisableFooterLinks(true);
 
     const body = document.querySelector('body');
     body.setAttribute('style', 'overflow-y: hidden');
   }
 
+  // toggleProjectMenu(): Will toggle the project dropdown menu from the project link.
+  const toggleProjectMenu = () =>{
+    setDisplayProjectMenu(!displayProjectMenu);
+  }
+
   return (
     <div className="app-component-container">
       <div>
-        <button onClick={navigationDropdown}>
+        {displayMobileDropdown && (
+          <button disabled={disableNavigationLinks} onClick={navigationDropdown}>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
               <path d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z" />
             </svg>
-        </button>
+          </button>
+        )}
 
-        <button onClick={workspaceStation}>Workspace Station</button>
+        {!displayMobileDropdown && (
+          <motion.div
+            className="project-dropdown-link"
+            onMouseEnter={toggleProjectMenu}
+            onMouseLeave={toggleProjectMenu}
+            >
+            Projects
+
+            <motion.div 
+              className="project-dropdown-menu"
+              initial="exit"
+              animate={displayProjectMenu ? "enter" : "exit"}
+              variants={projectMenuAnimate}
+              >
+                <ProjectDropdownMenu /> 
+            </motion.div>
+          </motion.div>
+        )}
+
+        <div>
+          <button disabled={disableWorkspaceStationButton} onClick={workspaceStation}>Workspace Station</button>
+        </div>
       </div>
 
       {/* Dropdown Menu Container */}
@@ -90,10 +190,12 @@ const App = () => {
                       setDisplayNavDropdown={setDisplayNavDropdown}
                       setDisplayNavDropdownContent={setDisplayNavDropdownContent}
                       setDisableProjectLinks={setDisableProjectLinks}
+                      setDisableWorkspaceStationButton={setDisableWorkspaceStationButton}
+                      setDisableFooterLinks={setDisableFooterLinks}
                     />
                     <div className="nav-dropdown-content">
                       <h2>Projects</h2>
-                      <Link to="projects/The Electronic One">The Electronic One</Link>
+                      <Link to="/projects/The Electronic One">The Electronic One</Link>
                       <Link to="projects/Strive">Strive</Link>
                       <Link to="projects/Cerebral">CEREBRAL: THE FINAL HOPE</Link>
                     </div>
@@ -128,6 +230,8 @@ const App = () => {
                 setDisplayNavDropdown={setDisplayNavDropdown}
                 setDisplayNavDropdownContent={setDisplayNavDropdownContent}
                 setDisableProjectLinks={setDisableProjectLinks}
+                setDisableNavigationLinks={setDisableNavigationLinks}
+                setDisableFooterLinks={setDisableFooterLinks}
               />
 
               <Workspace />
@@ -143,9 +247,11 @@ const App = () => {
         disableProjectLinks={disableProjectLinks}
       />
 
-      <FooterContent />
+      <FooterContent disableFooterLinks={disableFooterLinks} />
     </div>
   );
 }
-
+App.propTypes ={
+  test: PropTypes.bool,
+}
 export default App;

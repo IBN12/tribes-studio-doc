@@ -1,0 +1,48 @@
+/* |Project Dropdown Menu| */
+
+/* font-1 - Army of Darkness */
+@font-face {
+    font-family: army-of-darkness;
+    src: url(../fonts/army-of-darkness/ARMYD___.TTF);
+}
+
+/* font-2 - Square Space */
+@font-face{
+    font-family: square-space;
+    src: url("../fonts/square-space/Square Space.ttf");
+}
+
+/* font-3 - Sever */
+@font-face{
+    font-family: sever;
+    src: url(../fonts/sever/Severv2.ttf);
+}
+
+/**************************************************************************************************************************************************************************/
+/**************************************************************************************************************************************************************************/
+/*project-dropdown-component-container - The project dropdown component container. */
+.project-dropdown-component-container{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    padding: 20px;
+}
+.project-dropdown-component-container > div > a{ /* Link Containers */
+    text-decoration: none;
+    color: black;
+    font-size: 25px;
+}
+.project-dropdown-component-container > div > a:hover{
+    color: #f87171;
+}
+.project-dropdown-component-container > div:nth-child(1){ /* The Electronic One Link*/
+    margin-top: 30px;
+    font-family: army-of-darkness, system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; 
+}
+.project-dropdown-component-container > div:nth-child(2){ /* Strive Link */
+    font-family: sever, system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; 
+}
+.project-dropdown-component-container > div:nth-child(3){ /* Cerebral Link */
+    font-family: square-space, system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; 
+}

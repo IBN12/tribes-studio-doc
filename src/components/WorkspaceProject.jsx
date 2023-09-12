@@ -1,4 +1,4 @@
-import { Outlet, useParams } from "react-router-dom";
+import { Link, Outlet, useParams } from "react-router-dom";
 import { useEffect } from "react";
 
 import sosuBackgroundNoStudio from "../images/sosu_logo_design/SoSu_Studio_Background_NoStudio.png"; 
@@ -54,6 +54,12 @@ export const WorkspaceProject = () =>{
                                     src={sosuBackgroundImage}
                                     alt="Sosu studio With Background and Image"
                                 />
+                            </div>
+
+                            <div>
+                                <Link to="https://github.com/IBN12/tribes-studio-doc/tree/main/src/images/sosu_logo_design">
+                                    Location to download the logo
+                                </Link>
                             </div>
                         </>
                     

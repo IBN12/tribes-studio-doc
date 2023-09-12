@@ -13,6 +13,7 @@ export const Projects = () => {
 
     useEffect(()=>{
         console.log("URL Parameters: ", projectId);
+        console.log(location.state);
         const body = document.querySelector('body');
         body.removeAttribute('style');
     });

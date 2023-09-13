@@ -23,8 +23,9 @@ body{
 /* app-component-container - The root component container. */
 .app-component-container > div:nth-child(1){ /* Homepage navigation header */
     display: flex;
+    align-items: center;
 
-    border: 1px solid black;
+    /* border: 1px solid black; */
     background: #1e293b;
     padding: 20px
 }
@@ -53,13 +54,13 @@ body{
     top: 40px;
 }
 
-.app-component-container > h1{ /* SoSo Studio Documentation (Selector not in media-0)  */
+.app-component-container > h1{ /* SoSo Studio Documentation (font-size not in media-0)  */
     text-align: center;
     font-size: 40px;
     font-family: rockinline, system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     letter-spacing: 3px; 
 }
-.app-component-container > p{ /* Powered & Controlled by SoSu Plus (Selector not in media-0) */
+.app-component-container > p{ /* Powered & Controlled by SoSu Plus */
     text-align: center;
     font-size: 20px;
     color:#f59e0b;
@@ -135,6 +136,4 @@ body{
         color: #f59e0b;
         font-size: 18px;
     }
-
-  
 }

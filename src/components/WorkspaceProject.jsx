@@ -5,6 +5,8 @@ import sosuBackgroundNoStudio from "../images/sosu_logo_design/SoSu_Studio_Backg
 import sosuBackgroundWithStudio from "../images/sosu_logo_design/SoSu_Studio_Background_With_Studio.png";
 import sosuBackgroundImage from "../images/sosu_logo_design/SoSu_Studio_Background_Image.png";
 
+import { FooterContent } from "./FooterContent";
+
 import "../styles/WorkspaceProject.css";
 
 // WorkspaceProject(): The the workspace project component container.
@@ -68,6 +70,8 @@ export const WorkspaceProject = () =>{
                     null
                 }
             </div>
+
+            <FooterContent />
         </div>
     );
 }

@@ -14,8 +14,6 @@ import { useEffect, useState } from 'react';
 
 import { Link } from 'react-router-dom';
 
-import PropTypes from 'prop-types';
-
 // workspace variant:
 const workspace ={
   hidden: {x: "100%"},
@@ -51,7 +49,7 @@ const projectMenuAnimate = {
 }
 
 // App(): The root component container.
-const App = (props) => {
+const App = () => {
   const [displayWorkspaceWindow, setDisplayWorkspaceWindow] = useState(false);
   const [displayNavDropdown, setDisplayNavDropdown] = useState(false);
   const [displayNavDropdownContent, setDisplayNavDropdownContent] = useState(false);
@@ -61,11 +59,8 @@ const App = (props) => {
   const [disableFooterLinks, setDisableFooterLinks] = useState(false);
   const [displayMobileDropdown, setDisplayMobileDropdown] = useState(false);
   const [displayProjectMenu, setDisplayProjectMenu] = useState(false);
-  const {test} = props;
   
   useEffect(()=>{
-    console.log("Test: ", test);
-
     // Checks if the browser window width is less than 600.
     if (window.innerWidth <= 600)
     {
@@ -96,7 +91,7 @@ const App = (props) => {
         setDisplayMobileDropdown(false);
       }
     });
-  });
+  }, []);
 
   // Workspace Station function:
   function workspaceStation(e){
@@ -251,7 +246,5 @@ const App = (props) => {
     </div>
   );
 }
-App.propTypes ={
-  test: PropTypes.bool,
-}
+
 export default App;

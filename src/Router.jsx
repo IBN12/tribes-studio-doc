@@ -1,5 +1,4 @@
 import { createBrowserRouter, RouterProvider} from "react-router-dom"
-import { useState } from "react";
 
 import App from "./App"
 import { Projects } from "./components/Projects";
@@ -17,12 +16,11 @@ function HelloWorld(){
 
 // Router(): The main router component container.
 const Router = () => {
-    const [test, setTest] = useState(false); 
 
     const router = createBrowserRouter([
         {
             path: "/",
-            element: <App test={test} />,
+            element: <App />,
             loader: HelloWorld(),
         },
         

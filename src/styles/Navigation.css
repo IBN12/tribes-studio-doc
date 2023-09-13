@@ -1,13 +1,27 @@
 /* |Navigation Component Container| */
+
+/* font-1 - Rockinline font */
+@font-face{
+    font-family: rockinline;
+    src: url(../fonts/rockinline/Rockinline.ttf);
+}
+
+/***************************************************************************************************************************************************************/
+/***************************************************************************************************************************************************************/
 /* navigation-component-container - The navigation component container. */
 .navigation-component-container{
-    /* border: 1px solid black; */
+    padding: 27px;
+    background-color:#1e293b;
     margin-bottom: 20px;
 }
 .navigation-component-container > a{
     font-size: 18px;
+    font-family: rockinline, system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     text-decoration: none;
-    color: #27272a;
+    color: #d6d3d1;
     font-weight: bold;
-    letter-spacing: 4px
+    letter-spacing: 4px;
+}
+.navigation-component-container > a:hover{
+    color: #f59e0b;
 }

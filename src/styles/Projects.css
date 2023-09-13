@@ -5,7 +5,38 @@
     font-family: rockinline;
     src: url(../fonts/rockinline/Rockinline.ttf);
 }
+/***********************************************************************************************************************************************************/
+/***********************************************************************************************************************************************************/
+/* projects-component-container - The projects component container. */
+.projects-component-container{
+}
+.projects-component-container > div:nth-child(2){
+    display: flex;
+    justify-content: center;
+    border: 1px solid blue;
+}
+.projects-component-container > div:nth-child(2) >img[src]{
+    border: 1px solid black;
+}
 
+.project-content-section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    border: 1px solid orange;
+    margin-top: 30px;
+    height: 100vh;
+}
+.project-content-section > div{
+    font-family: rockinline, system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; 
+    letter-spacing: 3px;
+}
+
+
+
+/***********************************************************************************************************************************************************/
+/***********************************************************************************************************************************************************/
 /* Media Section - For mobile devices and tablets */
 /* media-0 - Desktop miniaturization and mobile devices. */
 @media only screen and (max-width: 600px){
@@ -13,7 +44,7 @@
     .projects-component-container{
         padding: 10px;
     }
-    .projects-component-container > img[src]{
+    .projects-component-container > div:nth-child(2) > img[src]{
         border-radius: 10px;
     }
 
@@ -22,9 +53,13 @@
         flex-direction: column;
         align-items: center;
 
-        /* border: 1px solid orange; */
-        font-family: rockinline, system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; 
-        letter-spacing: 3px;
+        border: 1px solid orange;
         margin-top:30px;
+        height: 100vh;
+    }
+    .project-content-section > div{
+        border: 1px solid blue;
+        font-family: rockinline, system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+        letter-spacing: 3px; 
     }
 }

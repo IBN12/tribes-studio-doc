@@ -10,4 +10,4 @@ will be used as way to coop and share ideas with other developers for creative s
 * Date: September-9-2023: Documentation launch day
 <hr />
 
-Site: [Visit Site](https://sosu-studio-doc.vercel.app/)
+[Visit Site](https://sosu-studio-doc.vercel.app/)

@@ -2,7 +2,7 @@ import '../styles/HomePageContent.css';
 
 import unrealEngineScreenshotOne from '../images/practice-one-screenshot-1.png';
 import unrealEngineScreenshotTwo from '../images/Unreal 5 Screenshot 2.png';
-import theElectronicOneLogoTitleSymbol from '../images/The_Electronic_One_Logo_Concept_Title_Symbol.png';
+import theElectronicOneLogoTitleSymbolBackground from '../images/The_Electronic_One_Logo_Concept_Title_Symbol_Background.png';
 import striveBannerConceptTitle3 from '../images/Strive_Banner_Concept_Title_3.png';
 import cerebralConceptLogo2 from '../images/Cerebral_Concept_Logo_2.png';
 import react from '../images/React.png';
@@ -24,18 +24,19 @@ export const HomePageContent = (props) => {
 
     useEffect(()=>{
         const projectLinks = document.querySelectorAll('#project-links > div > a > img[src]');
+
+        // Will scale the images in the project section.
         for (let i = 0; i < projectLinks.length; i++)
         {
             projectLinks[i].addEventListener('mouseover', ()=>{
-                console.log("Mouse is over the image.");
                 projectLinks[i].classList.add('scale-project-image');
             });
         }
 
+        // Will rescale the iamges in the project section.
         for (let i = 0; i < projectLinks.length; i++)
         {
             projectLinks[i].addEventListener('mouseout', ()=>{
-                console.log("Mouse is not over the image.");
                 projectLinks[i].classList.remove('scale-project-image');
             });
         }
@@ -99,7 +100,7 @@ export const HomePageContent = (props) => {
                             <div>
                                 <Link>
                                     <img 
-                                        src={theElectronicOneLogoTitleSymbol}
+                                        src={theElectronicOneLogoTitleSymbolBackground}
                                         alt="The Electronic One Logo Symbol"
                                     />
                                 </Link>
@@ -128,7 +129,7 @@ export const HomePageContent = (props) => {
                             <div>
                                 <Link to="/projects/The Electronic One">
                                     <img 
-                                        src={theElectronicOneLogoTitleSymbol}
+                                        src={theElectronicOneLogoTitleSymbolBackground}
                                         alt="The Electronic One Logo Symbol"
                                     />
                                 </Link>
@@ -177,7 +178,7 @@ export const HomePageContent = (props) => {
 
                 <div>
                     Twitch and YouTube are two platforms where you can find SoSuThirteen. SoSuThirteen is our streaming
-                    subsidiary platform where we will be streaming various amount of games from retro to current generation.
+                    subsidiary platform where we will be streaming a various amount of games from retro to current generation.
                 </div>
             </div>
         </div>

@@ -61,14 +61,10 @@
         flex-direction: column;
         gap: 5px;
 
-        /* border: 1px solid black; */
         padding: 10px;
         margin-top: 10px;
         background-color: #1e293b;
         color: #d4d4d8;
-    }
-    .footer-content-component-container > div{
-        /* border: 1px solid black; */
     }
 
     .footer-content-component-container > div:nth-child(1){ /* Join The Journey Container */

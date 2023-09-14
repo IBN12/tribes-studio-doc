@@ -1,17 +1,5 @@
 /* |App Component Container (Root Component Container)| */
 
-/* body - The main body of the application. */
-body{
-    margin: 0;
-    padding: 0;
-}
-
-/* * - All the elements in the application. */
-*{
-    box-sizing: border-box;
-}
-
-
 /* font-1 - Rockinline */
 @font-face {
     font-family: rockinline;
@@ -25,12 +13,8 @@ body{
     display: flex;
     align-items: center;
 
-    /* border: 1px solid black; */
     background: #1e293b;
     padding: 20px
-}
-.app-component-container > div:nth-child(1) > div{ /* Projects Link*/
-    /* flex: 1; */
 }
 /* The Project drodown Link in the navigation header. */
 .project-dropdown-link{ 
@@ -99,11 +83,8 @@ body{
         gap: 5px;
 
         border: none;
-        background: none;
-        padding: 0;
-    }
-    .app-component-container > div:nth-child(1) > div{
-        /* flex: none; */
+        background: #1e293b;
+        padding: 10px;
     }
     .app-component-container > div:nth-child(1) > button:nth-child(1){ /* Dropdown Menu button */
         border: 1px solid rgba(0, 0, 0, 0);
@@ -115,6 +96,7 @@ body{
     .app-component-container > div:nth-child(1) > button:nth-child(1) > svg{
         width: 40px;
         height: 40px;
+        fill: #d4d4d8;
     }
     .app-component-container > div:nth-child(1) > div:nth-child(2) > button{ /* Workspace Station button */
         font-size: 18px;

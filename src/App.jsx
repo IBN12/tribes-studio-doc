@@ -64,7 +64,6 @@ const App = () => {
     // Checks if the browser window width is less than 600.
     if (window.innerWidth <= 600)
     {
-      console.log(`The inner width of the window is less than 600`); // Testing
       setDisplayMobileDropdown(true);
     }
 
@@ -94,22 +93,18 @@ const App = () => {
   }, []);
 
   // Workspace Station function:
-  function workspaceStation(e){
-    console.log("Workspace Station");
-    console.log(e.target);
+  function workspaceStation(){
     setDisplayWorkspaceWindow(true);
     setDisableProjectLinks(true);
     setDisableNavigationLinks(true);
     setDisableFooterLinks(true);
 
     const body = document.querySelector('body');
-    body.setAttribute('style', 'overflow-y: hidden');
+    body.setAttribute('style', 'overflow-y: hidden'); // Disable application scroll when workspace station window is visible.
   }
 
   // Mobile Navigation dropdown function:
   function navigationDropdown(){
-    console.log("Nav Button Clicked!");
-
     setTimeout(()=>{
       setDisplayNavDropdownContent(true);
     }, 600);
@@ -120,7 +115,7 @@ const App = () => {
     setDisableFooterLinks(true);
 
     const body = document.querySelector('body');
-    body.setAttribute('style', 'overflow-y: hidden');
+    body.setAttribute('style', 'overflow-y: hidden'); // Disable application scroll when navigation dropdown is visible for mobile.
   }
 
   // toggleProjectMenu(): Will toggle the project dropdown menu from the project link.
@@ -130,6 +125,7 @@ const App = () => {
 
   return (
     <div className="app-component-container">
+      {/* Navigation Header Container */}
       <div>
         {displayMobileDropdown && (
           <button disabled={disableNavigationLinks} onClick={navigationDropdown}>

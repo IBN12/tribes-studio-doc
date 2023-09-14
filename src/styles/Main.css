@@ -1,0 +1,12 @@
+/* |Main Component Container| */
+
+/* body - The main body of the application. */
+body{
+    margin: 0;
+    padding: 0;
+}
+
+/* * - All the elements in the application. */
+*{
+    box-sizing: border-box;
+}

@@ -19,19 +19,16 @@ export const Projects = () => {
     });
 
     useEffect(()=>{
-        console.log("URL Parameters: ", projectId);
         const body = document.querySelector('body');
-        body.removeAttribute('style');
+        body.removeAttribute('style'); // Remove the overflow-y disable style.
 
         // Checks the window browser width.
         if (window.innerWidth <= 600)
         {
-            console.log("The window width is less than 600px"); // Testing
             setIsMobileBrowser(true);
         }
         else
         {
-            console.log("The window width is greater then 600px"); // Testing
             setIsMobileBrowser(false);
         }
         
@@ -39,12 +36,10 @@ export const Projects = () => {
         window.addEventListener('resize', ()=>{
             if (window.innerWidth <= 600)
             {
-                console.log("Resized: The window width is less than 600px"); // Testing
                 setIsMobileBrowser(true);
             }
             else
             {
-                console.log("Resized: The window width is greater than 600px"); // Testing
                 setIsMobileBrowser(false);
             }
         });
@@ -53,12 +48,10 @@ export const Projects = () => {
         window.addEventListener('load', () => {
             if (window.innerWidth <= 600)
             {
-                console.log("Load: The window width is less than 600px"); // Testing
                 setIsMobileBrowser(true);
             }
             else 
             {
-                console.log("Load: The window width is greater than 600px"); // Testing
                 setIsMobileBrowser(false);
             }
         });
@@ -82,16 +75,16 @@ export const Projects = () => {
                     (<img 
                         src={striveBannerConceptTitle3}
                         alt="Strive Banner Concept Title 3"
-                        height="150px"
-                        width="100%"
+                        height={isMobileBrowser ? "150px" : "100%"}
+                        width={isMobileBrowser ? "100%" : "1500px"}
                     />)
                     :
                     projectId === "Cerebral" ?
                     (<img 
                         src={cerebralConceptLogo2}
                         alt="Cerebral Concept Logo 2"
-                        height="350px"
-                        width="100%"
+                        height={isMobileBrowser ? "350px" : "100%" }
+                        width={isMobileBrowser ? "100%" : "512px"}
                     />)
                     :
                     null

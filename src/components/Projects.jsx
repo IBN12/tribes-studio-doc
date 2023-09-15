@@ -1,4 +1,4 @@
-import { Outlet, useParams, useNavigate} from "react-router-dom"
+import { Outlet, useParams} from "react-router-dom"
 import { useEffect, useState, useLayoutEffect } from "react";
 
 import '../styles/Projects.css';
@@ -13,7 +13,6 @@ import { FooterContent } from "./FooterContent";
 export const Projects = () => {
     const [isMobileBrowser, setIsMobileBrowser] = useState(true);
     const {projectId} = useParams();
-    const navigate = useNavigate();
 
     useLayoutEffect(() =>{
         window.scrollTo(0, 0);
@@ -56,22 +55,9 @@ export const Projects = () => {
             {
                 setIsMobileBrowser(false);
             }
-
-            if (projectId === "The Electronic One")
-            {
-                navigate(`/projects/${projectId}`);
-            }
-            else if (projectId === "Strive")
-            {
-                navigate(`/projects/${projectId}`);
-            }
-            else if (projectId === "Cerebral")
-            {
-                navigate(`/projects/${projectId}`);
-            }
         });
 
-    }, [projectId, navigate]);
+    }, [projectId]);
 
     return (
         <div className="projects-component-container">

@@ -1,4 +1,4 @@
-import { Link, Outlet, useNavigate, useParams } from "react-router-dom";
+import { Link, Outlet, useParams } from "react-router-dom";
 import { useEffect } from "react";
 
 import sosuBackgroundNoStudio from "../images/sosu_logo_design/SoSu_Studio_Background_NoStudio.png"; 
@@ -12,18 +12,10 @@ import "../styles/WorkspaceProject.css";
 // WorkspaceProject(): The the workspace project component container.
 export const WorkspaceProject = () =>{
     const {workspaceId} = useParams()
-    const navigate = useNavigate();
 
     useEffect(() => {
         const body = document.querySelector('body');
         body.removeAttribute("style"); 
-
-        window.addEventListener('load', () => {
-            if (workspaceId === "Logo Design")
-            {
-                navigate(`https://sosu-studio-doc.vercel.app/workspace/Logo%20Design`);
-            }
-        });
     });
 
     return(

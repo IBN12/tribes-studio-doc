@@ -21,7 +21,7 @@ export const WorkspaceProject = () =>{
         window.addEventListener('load', () => {
             if (workspaceId === "Logo Design")
             {
-                navigate(`https://sosu-studio-doc.vercel.app/workspace/${workspaceId}`);
+                navigate(`https://sosu-studio-doc.vercel.app/workspace/Logo%20Design`);
             }
         });
     });

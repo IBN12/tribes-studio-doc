@@ -1,4 +1,4 @@
-import { Outlet, useParams} from "react-router-dom"
+import { Outlet, useParams, useNavigate} from "react-router-dom"
 import { useEffect, useState, useLayoutEffect } from "react";
 
 import '../styles/Projects.css';
@@ -11,8 +11,9 @@ import { FooterContent } from "./FooterContent";
 
 // Projects(): This is the projects component container.
 export const Projects = () => {
+    const [isMobileBrowser, setIsMobileBrowser] = useState(true);
     const {projectId} = useParams();
-    const [isMobileBrowser, setIsMobileBrowser] = useState(false);
+    const navigate = useNavigate();
 
     useLayoutEffect(() =>{
         window.scrollTo(0, 0);
@@ -22,7 +23,7 @@ export const Projects = () => {
         const body = document.querySelector('body');
         body.removeAttribute('style'); // Remove the overflow-y disable style.
 
-        // Checks the window browser width.
+        // // Checks the window browser width.
         if (window.innerWidth <= 600)
         {
             setIsMobileBrowser(true);
@@ -42,6 +43,7 @@ export const Projects = () => {
             {
                 setIsMobileBrowser(false);
             }
+            
         });
 
         // Event checks the window browser during a load.
@@ -54,9 +56,22 @@ export const Projects = () => {
             {
                 setIsMobileBrowser(false);
             }
+
+            if (projectId === "The Electronic One")
+            {
+                navigate(`/projects/${projectId}`);
+            }
+            else if (projectId === "Strive")
+            {
+                navigate(`/projects/${projectId}`);
+            }
+            else if (projectId === "Cerebral")
+            {
+                navigate(`/projects/${projectId}`);
+            }
         });
 
-    }, [projectId]);
+    }, [projectId, navigate]);
 
     return (
         <div className="projects-component-container">
@@ -74,9 +89,9 @@ export const Projects = () => {
                     projectId === "Strive" ? 
                     (<img 
                         src={striveBannerConceptTitle3}
-                        alt="Strive Banner Concept Title 3"
-                        height={isMobileBrowser ? "150px" : "100%"}
-                        width={isMobileBrowser ? "100%" : "1500px"}
+                        alt="Srive Banner Concept Title 3"
+                        height="100%"
+                        width="100%"
                     />)
                     :
                     projectId === "Cerebral" ?
